@@ -1,0 +1,32 @@
+<!-- 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+В зависимости от переданного значения операции выполнить одну из арифметических операций
+(использовать функции из пункта 3) и вернуть полученное значение (использовать switch).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task6</title>
+</head>
+<body>
+<script>
+function mathOperation(arg1, arg2, operation){
+    			switch(operation){
+       				 case '+':
+           				 return arg1 + arg2;
+           				 break;
+       				 case '-':
+           				 return arg1 - arg2;
+            			 break;
+        			 case '/':
+                      			 return arg1 / arg2;
+            			 break;
+       				 case '*':
+           				 return arg1 * arg2;
+            			 break;
+   				}
+		}
+</script>
+</body>
+</html>
