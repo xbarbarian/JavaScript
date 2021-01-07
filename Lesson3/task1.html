@@ -1,0 +1,39 @@
+
+<!-- 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+</head>
+<body>
+<script>
+'use strict';
+function isPrime(n) {
+    let i = 2;
+    const k = Math.sqrt(n); //наименьший делитель составного числа n не превосходит √n
+    //это означает, что, перебирая потенциальные делители, можно оборвать перебор, когда k достигнет √n
+    // если до этого момента делителей не найдено, то их нет вообще.
+    while (i <= k) {
+        if (n % i++ < 1 ) return false;
+    }
+    return true;
+}
+
+function showPrime(n) {
+    let i = 2;
+    while (i <= n-1){
+        if (i == 2) {
+            alert(i++);
+        }
+        else if (!isPrime(++i)) continue;
+       alert(i);
+    }
+}
+
+showPrime(100);
+
+</script>
+</body>
+</html>
