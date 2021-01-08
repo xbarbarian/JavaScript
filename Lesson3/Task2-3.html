@@ -17,7 +17,7 @@ let basket = {
 }
 
 const countBasketPrice = basket.goods.reduce(( total, amount ) => (total) + (amount.price * amount.quantity), 0);
-console.log(countBasketPrice);
+console.log('Итого:' + countBasketPrice + 'p');
 
 </script>
 </body>
