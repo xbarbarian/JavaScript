@@ -9,14 +9,14 @@
 'use strict';
 let basket = {
     goods:[
-    {name: 'Елка', price: 10000},
-    {name: 'Подарок', price: 1000},
-    {name: 'Снегурочка', price: 5000},
-    {name: 'Дед мороз', price: 8000}
+    {id: 1, name: 'Елка', price: 10000, quantity:1},
+    {id: 2, name: 'Подарок', price: 1000, quantity:2},
+    {id: 3, name: 'Снегурочка', price: 5000, quantity:3},
+    {id: 4, name: 'Дед мороз', price: 8000, quantity:4}
     ]
 }
 
-const countBasketPrice = basket.goods.reduce(( total, amount ) => (total) + amount.price, 0);
+const countBasketPrice = basket.goods.reduce(( total, amount ) => (total) + (amount.price * amount.quantity), 0);
 console.log(countBasketPrice);
 
 </script>
