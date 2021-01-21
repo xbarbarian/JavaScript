@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+<script>
+
+    function ConvertNumber(number) {
+        const obj = {};
+        let strNumber = number.split('');
+        if (strNumber.length > 3) {
+            return 'Число больше 999';
+        }
+        else {
+            obj.units = (number % 10);
+            obj.tens = Math.floor((number/10)% 10);
+            obj.hundreds = Math.floor((number/100)% 10);
+            return obj;
+        }
+    }
+
+    let number = prompt('Введи число', 245);
+     console.log(ConvertNumber(number));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

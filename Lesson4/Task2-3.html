@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2-3</title>
+</head>
+<body>
+<script>
+'use strict';
+
+let jsonObj = [{
+  "id":       "1",
+  "name":     "Елка",
+  "img":      "img.jpg",
+  "price":    "10000",
+  "quantity": "1"
+},    {
+  "id":       "2",
+  "name":     "Подарок",
+  "img":      "img.jpg",
+  "price":    "2000",
+  "quantity": "10"}
+]
+
+class Basket{
+    constructor(goods) {
+        this.goods = goods;
+    }
+    get price(){
+        return this.calcPrice();
+    }
+    calcPrice() {
+        return this.goods.reduce(( total, amount ) => (total) + (amount.price * amount.quantity), 0);
+    }
+}
+
+// const countBasketPrice = jsonObj.reduce(( total, amount ) => (total) + (amount.price * amount.quantity), 0);
+// console.log('Итого:' + countBasketPrice + 'p');
+
+const goods = new Basket(jsonObj);
+console.log(goods.price)
+
+
+</script>
+</body>
+</html>
