@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+<script>
+    function tableCreate(){
+        tabel = document.createElement('table');
+        tabel.style.borderCollapse = 'collapse';
+        let letters = ['','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        let header = tabel.insertRow();
+        for (let i = 0; i < letters.length; i++){
+            let headerTD = header.insertCell();
+            headerTD.style.textAlign = 'center';
+            headerTD.appendChild(document.createTextNode(letters[i]));
+
+        }
+
+        for(let i = 1; i < 9; i++){
+            let tr = tabel.insertRow();
+            tr.insertAdjacentHTML('afterbegin','<td>' + (9 - i) + '</td>');
+
+            for(let j = 1; j < 9; j++){
+                if (i % 2 == j % 2){
+                    let td = tr.insertCell();
+                    td.style.height = '5em';
+                    td.style.width = '5em';
+                    td.style.backgroundColor = 'white';
+                    td.style.border = '1px solid black';
+                    }
+                else {
+                    let td = tr.insertCell();
+                    td.style.height = '5em';
+                    td.style.width = '5em';
+                    td.style.backgroundColor = 'black';
+                    td.style.border = '1px solid black';
+                    }
+
+            }
+
+        }
+        document.body.appendChild(tabel);
+    }
+
+tableCreate();
+</script>
+</body>
+</html>
